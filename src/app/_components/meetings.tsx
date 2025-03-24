@@ -1,15 +1,9 @@
 import type { Meeting } from "@/types/db";
 import Link from "next/link";
 
-export function MeetingItem({
-  meeting,
-  keyNum,
-}: {
-  meeting: Meeting;
-  keyNum: number;
-}) {
+export function MeetingItem({ meeting }: { meeting: Meeting }) {
   return (
-    <Link key={keyNum} href={`/dashboard/clients?client=${meeting.clientId}`}>
+    <Link href={`/dashboard/clients?client=${meeting.clientId}`}>
       <div className="flex w-full items-start justify-between gap-4 rounded-md border p-4 shadow-sm">
         <div className="flex flex-1 flex-col space-y-1">
           <span className="text-sm font-semibold">{meeting.title}</span>
@@ -29,7 +23,7 @@ export function MeetingView({ meetings }: { meetings: Meeting[] }) {
   return (
     <div className="flex flex-col gap-y-2">
       {meetings.map((m, i) => (
-        <MeetingItem meeting={m} keyNum={i} />
+        <MeetingItem meeting={m} key={i} />
       ))}
     </div>
   );
