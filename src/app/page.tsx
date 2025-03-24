@@ -33,7 +33,7 @@ export default async function HeroSection() {
               </Link>
             )}
             <Link
-              href="https://github.com/your-demo-repo"
+              href="https://github.com/vol1n/DemoCRM"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center rounded-md border border-gray-300 bg-white px-6 py-3 text-gray-700 transition hover:bg-gray-100"
