@@ -29,7 +29,7 @@ export function MeetingView({ meetings }: { meetings: Meeting[] }) {
   return (
     <div className="flex flex-col gap-y-2">
       {meetings.map((m, i) => (
-        <MeetingItem meeting={m} key={i} />
+        <MeetingItem meeting={m} keyNum={i} />
       ))}
     </div>
   );
