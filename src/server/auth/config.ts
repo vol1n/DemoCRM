@@ -2,10 +2,8 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
 import { type DefaultSession, type NextAuthConfig } from "next-auth";
 import EmailProvider from "next-auth/providers/email";
 import { createTransport } from "nodemailer";
-
 import { createCallerFactory } from "@/server/api/trpc";
 import { appRouter } from "../api/root";
-
 import { db } from "@/server/db";
 
 /**
@@ -95,6 +93,7 @@ export const authConfig = {
       try {
         const caller = createCaller({
           db,
+          headers: new Headers(),
           session: {
             user: {
               id: user.id!,
