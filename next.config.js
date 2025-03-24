@@ -5,6 +5,9 @@
 import "./src/env.js";
 
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+  basePath: "/demo-crm",
+  assetPrefix: "/demo-crm",
+};
 
 export default config;
